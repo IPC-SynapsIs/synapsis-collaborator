@@ -1,0 +1,27 @@
+server.port: 8080
+spring:
+    application.name: Synapsis-collaborator
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        testWhileIdle: true
+        validationQuery: SELECT 1
+        url: jdbc:mysql://localhost:3306/synapsis_collaborator?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: root
+        password:
+    jpa:
+        show-sql: true
+        database: MYSQL
+        hibernate:
+            ddl-auto: update
+            naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://home:8761/eureka/
+  instance:
+    preferIpAddress: true
